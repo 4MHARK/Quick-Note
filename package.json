@@ -1,0 +1,24 @@
+{
+  "name": "quicknote",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cli.js",
+  "bin":{
+    "qnote":"./cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4MHARK/Quick-Note.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/4MHARK/Quick-Note/issues"
+  },
+  "homepage": "https://github.com/4MHARK/Quick-Note#readme"
+}
