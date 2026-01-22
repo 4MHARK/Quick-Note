@@ -1,2 +1,20 @@
-console.log('QuickNote is working!');
-console.log('arguments received:', process.argv);
+const { saveNote, getTodayNotes } = require('./notes');
+let userArgs = process.argv.slice(2);
+if (userArgs.length === 0) {
+    console.log("Usage: qnote 'your note'");
+    console.log("       qnote --list");
+    
+} else if (userArgs[0] === "--list") {
+    const notes = getTodayNotes();
+    if (notes.length === 0) {
+        console.log("No notes today!");
+    } else {
+        console.log("Today's notes:");
+        notes.forEach(note => console.log(note));
+    }
+    
+} else {
+    const noteText = userArgs.join(' ');
+    saveNote(noteText);
+    console.log("✓ Note saved!");
+}
