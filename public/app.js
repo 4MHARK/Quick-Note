@@ -6,21 +6,20 @@ function loadNotes() {
     fetch('/api/notes/today')
         .then(response => response.json())
         .then(data => {
-            data.notes.forEach(note => {
-                const getElement = document.getElementById('notes-container');
-                const notes = data.notes;
-                if (notes.length === 0) {
-                    notesContainer.innerHTML = `<p> No Notes Logged in Today</p>`;
-                    return;
-                }
-
-                let html = '';
-                for(let i = 0; i < notes.length; i++) {
-                    html += `<div class = "note"> + note[i] + </div>`;
-                }
-
-            })
-           
+            const notesContainer = document.getElementById('notes-container');
+            const notes = data.notes;
+            
+            if (notes.length === 0) {
+                notesContainer.innerHTML = '<p>No notes today!</p>';
+                return;
+            }
+            
+            let html = '';
+            notes.forEach(note => {
+                html += `<div class="note">${note}</div>`;
+            });
+            
+            notesContainer.innerHTML = html;
         })
         .catch(error => {
             console.error('Error:', error);

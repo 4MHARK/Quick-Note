@@ -7,7 +7,11 @@
     "qnote": "./cli.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+   "test": "echo \"Error: no test specified\" && exit 1",
+  "qnote": "node cli.js",
+  "qn": "node cli.js",
+  "web": "node cli.js --web",
+  "list": "node cli.js --list"
   },
   "repository": {
     "type": "git",
